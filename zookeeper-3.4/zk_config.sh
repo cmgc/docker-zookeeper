@@ -45,6 +45,9 @@ else
   CONSUL_QUERY="${CONSUL_TAG}.${CONSUL_SERVICE}" 
 fi
 
+# Starting exhibitor
+/usr/local/bin/exhibitor.sh
+
 ${CONSUL_TEMPLATE} -consul ${CONSUL_CONNECT} \
                    -wait ${CONSUL_MINWAIT}:${CONSUL_MAXWAIT} \
-                   $args -template ${TEMPLATE_DIR}/zoo.env.tmpl:${ZK_HOME}/conf/zoo.env:${RESTART_COMMAND} $@ 
+                   $args -template ${TEMPLATE_DIR}/zoo.env.tmpl:${ZK_HOME}/conf/zoo.env:${RESTART_COMMAND} $@
