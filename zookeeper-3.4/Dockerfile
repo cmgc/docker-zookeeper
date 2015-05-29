@@ -62,13 +62,10 @@ COPY setacl.sh /usr/local/bin/
 COPY exhibitor.sh /usr/local/bin/
 COPY zk_manage.sh /usr/local/bin/ 
 
-WORKDIR /opt/exhibitor
+WORKDIR /opt/zookeeper
 EXPOSE 2181 2888 3888 8181
 
-#VOLUME /opt/zookeeper/transactions
-#VOLUME /opt/zookeeper/snapshots
 
 VOLUME ["/var/lib/zookeeper", "/var/log/zookeeper"]
 
-#ENTRYPOINT ["bash", "-ex", "/usr/local/bin/zk_config.sh"]
-ENTRYPOINT ["bash", "-ex", "/usr/local/bin/exhibitor.sh"]
+ENTRYPOINT ["bash", "-ex", "/usr/local/bin/zk_config.sh"]
