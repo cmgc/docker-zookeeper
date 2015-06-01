@@ -4,7 +4,7 @@ cat <<- EOF > /opt/exhibitor/defaults.conf
 	zookeeper-data-directory=$ZK_DATA_DIR
 	zookeeper-log-directory=$ZK_LOG_DIR
 	zookeeper-install-directory=/opt/zookeeper
-	log-index-directory=$ZK_LOG_DIR
+	log-index-directory=$ZK_LOG_DIR/indexed
 	backup-extra=directory\=${ZK_LOG_DIR}/backup
 	cleanup-period-ms=300000
 	check-ms=30000
